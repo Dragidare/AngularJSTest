@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-    <title>MyAngular</title>
-</head>
 
-<body>
+  <head>
+    <script data-require="angular.js@*" data-semver="1.4.0-beta.1" src="https://code.angularjs.org/1.4.0-beta.1/angular.js"></script>
+    <link rel="stylesheet" href="main.css" />
+    <script src="FirstCtrl.js"></script>
 
+  </head>
+ 
+  <body ng-app="demo1">
+  
+   <input type="text" ng-model="text1">
+   <p>{{text1 | limitTo:10 }}</p>
+   
+    <input type="text" ng-model="text">
+   <p>{{text | ellipsis:5 }}</p>
+   
+  <input type="number" ng-model="amount">
+   <p>{{amount | currency }}</p>
+   
+  <input type="date" ng-model="date1">
+   <p>{{date1 | date:'yyyy/MM/dd'}}</p> 
+   
+   
+   <div ng-controller="FirstCtrl">
+     <p>{{ fullName() }}</p>
+   </div>
+   
+   
+  </body>
 
-
-</body>
 </html>
